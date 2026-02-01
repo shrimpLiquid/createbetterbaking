@@ -185,14 +185,14 @@
       }
     },
     {
-      "name": "SPOUTING",
+      "name": "CreateCompat",
       "type": "code",
       "compiles": false,
       "locked_code": true,
-      "registry_name": "spouting",
+      "registry_name": "create_compat",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/createbetterbaking/SPOUTING.java"
+          "src/main/java/net/mcreator/createbetterbaking/CreateCompat.java"
         ]
       }
     }
