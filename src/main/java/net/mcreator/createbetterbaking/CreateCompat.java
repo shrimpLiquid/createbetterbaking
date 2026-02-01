@@ -1,27 +1,61 @@
 package net.mcreator.createbetterbaking;
 
-// Dangerous imports are safe here because this class is ONLY loaded 
-// if we explicitly call it after checking if Create is loaded.
-import com.simibubi.create.api.behavior.SpoutAction;
+import com.simibubi.create.api.behaviour.spouting.BlockSpoutingBehaviour;
+import com.simibubi.create.content.fluids.spout.SpoutBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.registries.RegisterEvent;
 
 public class CreateCompat {
-    public static void registerSpoutInteractions() {
-        SpoutAction.register(new ResourceLocation("createbetterbaking", "world_block_hydration"), (level, pos, spout, fluidStack, itemStack, simulate) -> {
-            BlockPos targetPos = pos.below(2);
-            BlockState currentState = level.getBlockState(targetPos);
 
-            if (!fluidStack.getFluid().isSame(Fluids.WATER) || fluidStack.getAmount() < 100) return 0;
-            if (!currentState.is(Blocks.DIRT)) return 0;
-            if (simulate) return 100;
+    static {
+        System.out.println("DEBUG: CreateCompat class has been loaded into memory!");
+    }
 
-            level.setBlockAndUpdate(targetPos, Blocks.GRASS_BLOCK.defaultBlockState());
-            return 100;
+    public static void init(IEventBus modBus) {
+        System.out.println("DEBUG: CreateCompat.init() called. Adding listener...");
+        modBus.addListener(CreateCompat::onRegister);
+    }
+
+    public static void onRegister(RegisterEvent event) {
+        // Manually creating the key to bypass version-specific variable names
+        ResourceKey<net.minecraft.core.Registry<BlockSpoutingBehaviour>> spoutKey = 
+            ResourceKey.createRegistryKey(ResourceLocation.fromNamespaceAndPath("create", "spouting_behaviour"));
+
+        event.register(spoutKey, helper -> {
+            ResourceLocation id = ResourceLocation.fromNamespaceAndPath("createbetterbaking", "spout_hydration");
+
+            BlockSpoutingBehaviour hydrationBehaviour = new BlockSpoutingBehaviour() {
+                @Override
+                public int fillBlock(Level level, BlockPos pos, SpoutBlockEntity spout, FluidStack fluidStack, boolean simulate) {
+                    // Check 1 and 2 blocks below the Spout
+                    for (int i = 1; i <= 2; i++) {
+                        BlockPos targetPos = pos.below(i);
+                        BlockState currentState = level.getBlockState(targetPos);
+
+                        if (fluidStack.getFluid().isSame(Fluids.WATER) && fluidStack.getAmount() >= 100) {
+                            if (currentState.is(Blocks.SAND)) {
+                                if (!simulate) {
+                                    System.out.println("SPOUT SUCCESS: Converting sand to grass!");
+                                    level.setBlockAndUpdate(targetPos, Blocks.GRASS_BLOCK.defaultBlockState());
+                                }
+                                return 100;
+                            }
+                        }
+                    }
+                    return 0;
+                }
+            };
+
+            helper.register(id, hydrationBehaviour);
+            System.out.println("DEBUG: Spout Behavior 'spout_hydration' Registered!");
         });
     }
 }

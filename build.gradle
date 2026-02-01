@@ -3,23 +3,31 @@ plugins {
     id 'net.neoforged.moddev' version '2.0.107'
 }
 
+apply from: 'mcreator.gradle'
+
 version = '1.0'
-base.archivesName = "modid"
+base.archivesName = "crbeba"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation name: 'create-v6' // This assumes 'create-v6.jar' is in /libs
+}
 neoForge {
     version = "21.1.190"
 
     runs {
         client {
             client()
-
             def mcreatorJvmOptions = System.getenv('MCREATOR_JVM_OPTIONS')
             if (mcreatorJvmOptions) {
-                mcreatorJvmOptions.split("\\s+").findAll { it.trim() }.each { arg ->
-                    jvmArgument(arg)
-                }
+                jvmArguments.addAll(mcreatorJvmOptions.split(/\s+/))
             }
         }
         server {
@@ -33,14 +41,22 @@ neoForge {
     }
 
     mods {
-        mcreator {
+        createbetterbaking {
             sourceSet sourceSets.main
         }
     }
 }
 
 tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+    options.encoding = 'UTF-8'
 }
 
-apply from: 'mcreator.gradle'
+// Wrap this in a check to prevent "Method not found" if the plugin hasn't finished loading
+if (project.hasProperty('mcreator')) {
+    mcreator {
+        sourceSet sourceSets.main
+    }
+} else {
+    // Fallback if the method isn't injected yet
+    project.ext.mcreator = { sourceSets.main }
+}
