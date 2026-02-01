@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "crbeba:blocks/unfrosted_cake",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "crbeba:unfrosted_cake"
+        }
+      ]
+    }
+  ]
+}

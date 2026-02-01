@@ -1,0 +1,9 @@
+{
+  "parent": "crbeba:custom/nofrosting",
+  "textures": {
+    "all": "crbeba:block/nofrosting",
+    "particle": "crbeba:block/nofrosting",
+    "0": "crbeba:block/nofrosting"
+  },
+  "render_type": "solid"
+}

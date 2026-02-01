@@ -1,0 +1,9 @@
+{
+  "parent": "crbeba:custom/batter",
+  "textures": {
+    "all": "crbeba:block/cak",
+    "particle": "minecraft:block/iron_block",
+    "0": "crbeba:block/bateter"
+  },
+  "render_type": "cutout"
+}

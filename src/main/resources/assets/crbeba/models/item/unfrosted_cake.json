@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "crbeba:item/unfrosttedcake"
+  },
+  "render_type": "translucent"
+}

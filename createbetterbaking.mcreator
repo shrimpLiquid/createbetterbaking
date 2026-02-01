@@ -1,0 +1,247 @@
+{
+  "mod_elements": [
+    {
+      "name": "CakePanWithCake",
+      "type": "block",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "cake_pan_with_cake",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/crbeba/blockstates/cake_pan_with_cake.json",
+          "src/main/resources/data/crbeba/loot_table/blocks/cake_pan_with_cake.json",
+          "src/main/java/net/mcreator/createbetterbaking/block/CakePanWithCakeBlock.java",
+          "src/main/resources/assets/crbeba/models/item/cake_pan_with_cake.json",
+          "src/main/resources/assets/crbeba/models/block/cake_pan_with_cake.json"
+        ]
+      }
+    },
+    {
+      "name": "CreateBetterBaking",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "create_better_baking",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "CakePanWithBatter",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cake_pan_with_batter",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/crbeba/models/item/cake_pan_with_batter.json",
+          "src/main/resources/assets/crbeba/models/block/cake_pan_with_batter.json",
+          "src/main/java/net/mcreator/createbetterbaking/block/CakePanWithBatterBlock.java",
+          "src/main/resources/data/crbeba/loot_table/blocks/cake_pan_with_batter.json",
+          "src/main/resources/assets/crbeba/blockstates/cake_pan_with_batter.json"
+        ]
+      }
+    },
+    {
+      "name": "CakePan",
+      "type": "block",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "cake_pan",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/crbeba/models/block/cake_pan.json",
+          "src/main/resources/assets/crbeba/models/item/cake_pan.json",
+          "src/main/java/net/mcreator/createbetterbaking/block/CakePanBlock.java",
+          "src/main/resources/assets/crbeba/blockstates/cake_pan.json",
+          "src/main/resources/data/crbeba/loot_table/blocks/cake_pan.json"
+        ]
+      }
+    },
+    {
+      "name": "CakePanWithBatterOnTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cake_pan_with_batter_on_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "blockstate",
+            "type": "blockstate"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/createbetterbaking/procedures/CakePanWithBatterOnTickUpdateProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "CakePanBlockAdded",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cake_pan_block_added",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "blockstate",
+            "type": "blockstate"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/createbetterbaking/procedures/CakePanBlockAddedProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "SOUP",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soup",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/crbeba/advancement/soup.json"
+        ]
+      }
+    },
+    {
+      "name": "UnfrostedCake",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "unfrosted_cake",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/createbetterbaking/block/UnfrostedCakeBlock.java",
+          "src/main/resources/assets/crbeba/models/block/unfrosted_cake.json",
+          "src/main/resources/data/crbeba/loot_table/blocks/unfrosted_cake.json",
+          "src/main/resources/assets/crbeba/models/item/unfrosted_cake.json",
+          "src/main/resources/assets/crbeba/blockstates/unfrosted_cake.json"
+        ]
+      }
+    },
+    {
+      "name": "Test",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "test",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/createbetterbaking/procedures/TestProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "SPOUTING",
+      "type": "code",
+      "compiles": false,
+      "locked_code": true,
+      "registry_name": "spouting",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/createbetterbaking/SPOUTING.java"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "tag_elements": {},
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "block.crbeba.cake_pan_with_cake": "Cake Pan With Cake",
+      "item_group.crbeba.create_better_baking": "Create Better Baking",
+      "block.crbeba.cake_pan_with_batter": "Cake Pan With Batter",
+      "block.crbeba.cake_pan": "Cake Pan",
+      "advancements.soup.title": "soup",
+      "advancements.soup.descr": "Cook A Cake",
+      "block.crbeba.unfrosted_cake": "Unfrosted Cake"
+    }
+  },
+  "metadata": {
+    "files": [
+      "src/main/java/net/mcreator/createbetterbaking/init/CrbebaModBlocks.java",
+      "src/main/java/net/mcreator/createbetterbaking/init/CrbebaModItems.java",
+      "src/main/resources/pack.mcmeta",
+      "src/main/java/net/mcreator/createbetterbaking/init/CrbebaModTabs.java",
+      "src/main/resources/crbeba.mixins.json",
+      "src/main/resources/META-INF/neoforge.mods.toml",
+      "src/main/java/net/mcreator/createbetterbaking/CrbebaMod.java"
+    ]
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "crbeba",
+    "modName": "createbetterbaking",
+    "version": "1.0.0",
+    "author": "gavda, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Not specified",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.21.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "net.mcreator.createbetterbaking"
+  },
+  "mcreatorVersion": 202500345720
+}

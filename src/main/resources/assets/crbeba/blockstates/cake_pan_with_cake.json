@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=up":    { "model": "crbeba:block/cake_pan_with_cake" },
+    "facing=down":  { "model": "crbeba:block/cake_pan_with_cake", "x": 180 },
+    "facing=north": { "model": "crbeba:block/cake_pan_with_cake", "x": 90 },
+    "facing=south": { "model": "crbeba:block/cake_pan_with_cake", "x": 90, "y": 180 },
+    "facing=east":  { "model": "crbeba:block/cake_pan_with_cake", "x": 90, "y": 90 },
+    "facing=west":  { "model": "crbeba:block/cake_pan_with_cake", "x": 90, "y": 270 }
+  }
+}
