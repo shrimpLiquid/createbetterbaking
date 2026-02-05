@@ -5,5 +5,13 @@
   "block.crbeba.cake_pan": "Cake Pan",
   "advancements.soup.title": "soup",
   "advancements.soup.descr": "Cook A Cake",
-  "block.crbeba.unfrosted_cake": "Unfrosted Cake"
+  "block.crbeba.unfrosted_cake": "Unfrosted Cake",
+  "fluid_type.crbeba.frosting": "Frosting",
+  "block.crbeba.frosting": "Frosting",
+  "fluid.crbeba.frosting": "Frosting",
+  "item.crbeba.frosting_bucket": "Frosting Bucket",
+  "item.crbeba.batter_bucket": "Frosting Bucket",
+  "block.crbeba.batter": "Frosting",
+  "fluid.crbeba.batter": "Frosting",
+  "fluid_type.crbeba.batter": "Frosting"
 }

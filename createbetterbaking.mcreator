@@ -158,7 +158,7 @@
       "name": "Test",
       "type": "procedure",
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "test",
       "metadata": {
         "dependencies": [
@@ -195,11 +195,64 @@
           "src/main/java/net/mcreator/createbetterbaking/CreateCompat.java"
         ]
       }
+    },
+    {
+      "name": "Frosting",
+      "type": "fluid",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "frosting",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/createbetterbaking/item/FrostingItem.java",
+          "src/main/resources/assets/crbeba/blockstates/frosting.json",
+          "src/main/resources/assets/crbeba/models/item/frosting_bucket.json",
+          "src/main/java/net/mcreator/createbetterbaking/fluid/FrostingFluid.java",
+          "src/main/java/net/mcreator/createbetterbaking/fluid/types/FrostingFluidType.java",
+          "src/main/resources/assets/crbeba/models/block/frosting.json",
+          "src/main/java/net/mcreator/createbetterbaking/block/FrostingBlock.java"
+        ]
+      }
+    },
+    {
+      "name": "CreateCompatS",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "create_compat_s",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/createbetterbaking/CreateCompatS.java"
+        ]
+      }
+    },
+    {
+      "name": "Batter",
+      "type": "fluid",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "batter",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/crbeba/models/item/batter_bucket.json",
+          "src/main/resources/assets/crbeba/models/block/batter.json",
+          "src/main/java/net/mcreator/createbetterbaking/fluid/types/BatterFluidType.java",
+          "src/main/java/net/mcreator/createbetterbaking/fluid/BatterFluid.java",
+          "src/main/resources/assets/crbeba/blockstates/batter.json",
+          "src/main/java/net/mcreator/createbetterbaking/item/BatterItem.java",
+          "src/main/java/net/mcreator/createbetterbaking/block/BatterBlock.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
-  "tag_elements": {},
+  "tag_elements": {
+    "BLOCKS:minecraft:replaceable": [
+      "~CUSTOM:Batter",
+      "~CUSTOM:Frosting"
+    ]
+  },
   "tab_element_order": {},
   "language_map": {
     "en_us": {
@@ -209,11 +262,21 @@
       "block.crbeba.cake_pan": "Cake Pan",
       "advancements.soup.title": "soup",
       "advancements.soup.descr": "Cook A Cake",
-      "block.crbeba.unfrosted_cake": "Unfrosted Cake"
+      "block.crbeba.unfrosted_cake": "Unfrosted Cake",
+      "fluid_type.crbeba.frosting": "Frosting",
+      "block.crbeba.frosting": "Frosting",
+      "fluid.crbeba.frosting": "Frosting",
+      "item.crbeba.frosting_bucket": "Frosting Bucket",
+      "item.crbeba.batter_bucket": "Frosting Bucket",
+      "block.crbeba.batter": "Frosting",
+      "fluid.crbeba.batter": "Frosting",
+      "fluid_type.crbeba.batter": "Frosting"
     }
   },
   "metadata": {
     "files": [
+      "src/main/java/net/mcreator/createbetterbaking/init/CrbebaModFluids.java",
+      "src/main/java/net/mcreator/createbetterbaking/init/CrbebaModFluidTypes.java",
       "src/main/java/net/mcreator/createbetterbaking/init/CrbebaModBlocks.java",
       "src/main/java/net/mcreator/createbetterbaking/init/CrbebaModItems.java",
       "src/main/resources/pack.mcmeta",
@@ -231,16 +294,14 @@
     "modid": "crbeba",
     "modName": "createbetterbaking",
     "version": "1.0.0",
-    "author": "gavda, MCreator",
+    "author": "shrimpliquid, MCreator",
     "websiteURL": "https://mcreator.net",
     "license": "Not specified",
     "serverSideOnly": false,
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
-    "mcreatorDependencies": [
-      "nexus_compiler"
-    ],
+    "mcreatorDependencies": [],
     "currentGenerator": "neoforge-1.21.1",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.createbetterbaking"

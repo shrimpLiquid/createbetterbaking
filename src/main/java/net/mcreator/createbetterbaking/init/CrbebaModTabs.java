@@ -5,14 +5,19 @@ package net.mcreator.createbetterbaking.init;
 
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
 
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.registries.Registries;
 
 import net.mcreator.createbetterbaking.CrbebaMod;
 
+@EventBusSubscriber
 public class CrbebaModTabs {
 	public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CrbebaMod.MODID);
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CREATE_BETTER_BAKING = REGISTRY.register("create_better_baking",
@@ -20,5 +25,16 @@ public class CrbebaModTabs {
 				tabData.accept(CrbebaModBlocks.CAKE_PAN_WITH_CAKE.get().asItem());
 				tabData.accept(CrbebaModBlocks.CAKE_PAN_WITH_BATTER.get().asItem());
 				tabData.accept(CrbebaModBlocks.CAKE_PAN.get().asItem());
+				tabData.accept(CrbebaModBlocks.UNFROSTED_CAKE.get().asItem());
 			}).build());
+
+	@SubscribeEvent
+	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
+		if (tabData.getTabKey() == CreativeModeTabs.OP_BLOCKS) {
+			if (tabData.hasPermissions()) {
+				tabData.accept(CrbebaModItems.FROSTING_BUCKET.get());
+				tabData.accept(CrbebaModItems.BATTER_BUCKET.get());
+			}
+		}
+	}
 }

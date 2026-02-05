@@ -11,34 +11,34 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.mcreator.createbetterbaking.init.CrbebaModFluids;
 
-public class CreateCompat {
+public class CreateCompatS {
 
     public static void init(IEventBus modBus) {
         // We use CommonSetup to ensure Create's registries are initialized first
-        modBus.addListener(CreateCompat::onCommonSetup);
+        modBus.addListener(CreateCompatS::onCommonSetup);
     }
 
     public static void onCommonSetup(FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             BlockSpoutingBehaviour sandBehavior = (level, pos, spout, fluidStack, simulate) -> {
                 // 1. Check for Water
-                if (!fluidStack.getFluid().isSame(CrbebaModFluids.FROSTING.get())) {
+                if (!fluidStack.getFluid().isSame(CrbebaModFluids.BATTER.get())) {
                     return 0;
                 }
 
                 // 2. Check if the block is Sand (or Red Sand)
-                if (level.getBlockState(pos).is(CrbebaModBlocks.UNFROSTED_CAKE.get())) {
+                if (level.getBlockState(pos).is(CrbebaModBlocks.CAKE_PAN.get())) {
                     if (simulate) return 100;
 
                     // 3. Transform the block
-                    level.setBlockAndUpdate(pos,  Blocks.CAKE.defaultBlockState());
+                    level.setBlockAndUpdate(pos,  CrbebaModBlocks.CAKE_PAN_WITH_BATTER.get().defaultBlockState());
                     return 100;
                 }
                 return 0;
             };
 
             // This is the specific "BY_BLOCK" registry found in your file
-            BlockSpoutingBehaviour.BY_BLOCK.register(CrbebaModBlocks.UNFROSTED_CAKE.get(), sandBehavior);
+            BlockSpoutingBehaviour.BY_BLOCK.register(CrbebaModBlocks.CAKE_PAN.get(), sandBehavior);
             
             
             System.out.println("!!! CRBEBA: Sand Spouting logic injected into Create's BY_BLOCK registry!");

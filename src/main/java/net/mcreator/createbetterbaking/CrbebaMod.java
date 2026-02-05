@@ -20,6 +20,8 @@ import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.createbetterbaking.init.CrbebaModTabs;
 import net.mcreator.createbetterbaking.init.CrbebaModItems;
+import net.mcreator.createbetterbaking.init.CrbebaModFluids;
+import net.mcreator.createbetterbaking.init.CrbebaModFluidTypes;
 import net.mcreator.createbetterbaking.init.CrbebaModBlocks;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -36,12 +38,17 @@ public class CrbebaMod {
 
 	public CrbebaMod(IEventBus modEventBus) {
 		// Start of user code block mod constructor
+		//CreateCompat.init(modEventBus);
+		net.mcreator.createbetterbaking.CreateCompat.init(modEventBus);
+		net.mcreator.createbetterbaking.CreateCompatS.init(modEventBus);
 		// End of user code block mod constructor
 		NeoForge.EVENT_BUS.register(this);
 		modEventBus.addListener(this::registerNetworking);
 		CrbebaModBlocks.REGISTRY.register(modEventBus);
 		CrbebaModItems.REGISTRY.register(modEventBus);
 		CrbebaModTabs.REGISTRY.register(modEventBus);
+		CrbebaModFluids.REGISTRY.register(modEventBus);
+		CrbebaModFluidTypes.REGISTRY.register(modEventBus);
 		// Start of user code block mod init
 		// End of user code block mod init
 	}
