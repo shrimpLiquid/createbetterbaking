@@ -243,6 +243,55 @@
           "src/main/java/net/mcreator/createbetterbaking/block/BatterBlock.java"
         ]
       }
+    },
+    {
+      "name": "Butter",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "butter",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/createbetterbaking/item/ButterItem.java",
+          "src/main/resources/assets/crbeba/models/item/butter.json"
+        ]
+      }
+    },
+    {
+      "name": "Sasffs",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "sasffs",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/crbeba/recipe/sasffs.json"
+        ]
+      }
+    },
+    {
+      "name": "Batre",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "batre",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/crbeba/recipe/batre.json"
+        ]
+      }
+    },
+    {
+      "name": "Cakepanmake",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "cakepanmake",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/crbeba/recipe/cakepanmake.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -268,9 +317,10 @@
       "fluid.crbeba.frosting": "Frosting",
       "item.crbeba.frosting_bucket": "Frosting Bucket",
       "item.crbeba.batter_bucket": "Frosting Bucket",
-      "block.crbeba.batter": "Frosting",
-      "fluid.crbeba.batter": "Frosting",
-      "fluid_type.crbeba.batter": "Frosting"
+      "block.crbeba.batter": "Batter",
+      "fluid.crbeba.batter": "Batter",
+      "fluid_type.crbeba.batter": "Batter",
+      "item.crbeba.butter": "Butter"
     }
   },
   "metadata": {

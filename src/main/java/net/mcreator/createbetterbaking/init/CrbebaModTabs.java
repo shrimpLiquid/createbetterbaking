@@ -26,6 +26,7 @@ public class CrbebaModTabs {
 				tabData.accept(CrbebaModBlocks.CAKE_PAN_WITH_BATTER.get().asItem());
 				tabData.accept(CrbebaModBlocks.CAKE_PAN.get().asItem());
 				tabData.accept(CrbebaModBlocks.UNFROSTED_CAKE.get().asItem());
+				tabData.accept(CrbebaModItems.BUTTER.get());
 			}).build());
 
 	@SubscribeEvent

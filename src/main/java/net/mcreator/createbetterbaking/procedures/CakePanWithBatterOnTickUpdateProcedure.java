@@ -1,10 +1,13 @@
 package net.mcreator.createbetterbaking.procedures;
 
+import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.createbetterbaking.init.CrbebaModBlocks;
@@ -39,9 +42,17 @@ public class CakePanWithBatterOnTickUpdateProcedure {
 							world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 					}
 				} else {
-					world.setBlock(BlockPos.containing(x, y, z), CrbebaModBlocks.CAKE_PAN_WITH_CAKE.get().defaultBlockState(), 3);
+					world.setBlock(BlockPos.containing(x, y, z), (blockStateWithDirection(CrbebaModBlocks.CAKE_PAN_WITH_CAKE.get().defaultBlockState(), Direction.UP)), 3);
 				}
 			}
 		}
+	}
+
+	private static BlockState blockStateWithDirection(BlockState blockState, Direction newValue) {
+		Property<?> prop = blockState.getBlock().getStateDefinition().getProperty("facing");
+		if (prop instanceof DirectionProperty dp && dp.getPossibleValues().contains(newValue))
+			return blockState.setValue(dp, newValue);
+		prop = blockState.getBlock().getStateDefinition().getProperty("axis");
+		return prop instanceof EnumProperty ep && ep.getPossibleValues().contains(newValue.getAxis()) ? blockState.setValue(ep, newValue.getAxis()) : blockState;
 	}
 }

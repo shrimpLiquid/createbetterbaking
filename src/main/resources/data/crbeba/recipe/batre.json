@@ -1,0 +1,30 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "create:wheat_flour",
+      "count": 3
+    },
+    {
+      "item": "minecraft:sugar",
+      "count": 2
+    },
+    {
+      "item": "minecraft:egg",
+      "count": 1
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 500,
+      "fluid": "minecraft:milk"
+    }
+  ],
+  "results": [
+    {
+      "id": "crbeba:batter",
+      "count": 1,
+      "amount": 500
+    }
+  ],
+  "heatRequirement": "none"
+}

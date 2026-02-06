@@ -6,6 +6,7 @@ import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.item.FallingBlockEntity;
@@ -34,7 +35,7 @@ public class CakePanBlockAddedProcedure {
 				}
 			}
 		}
-		if (Direction.DOWN == (getDirectionFromBlockState(blockstate))) {
+		if (Direction.DOWN == (getDirectionFromBlockState(blockstate)) && (world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == Blocks.AIR) {
 			if (world instanceof ServerLevel _level)
 				FallingBlockEntity.fall(_level, BlockPos.containing(x, y - 1, z), CrbebaModBlocks.UNFROSTED_CAKE.get().defaultBlockState());
 			{

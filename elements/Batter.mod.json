@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "fluid",
   "definition": {
-    "name": "Frosting",
+    "name": "Batter",
     "bucketName": "Frosting Bucket",
     "textureStill": "flowing_frosting",
     "textureFlowing": "flowing_frosting",

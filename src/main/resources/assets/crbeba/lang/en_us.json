@@ -11,7 +11,8 @@
   "fluid.crbeba.frosting": "Frosting",
   "item.crbeba.frosting_bucket": "Frosting Bucket",
   "item.crbeba.batter_bucket": "Frosting Bucket",
-  "block.crbeba.batter": "Frosting",
-  "fluid.crbeba.batter": "Frosting",
-  "fluid_type.crbeba.batter": "Frosting"
+  "block.crbeba.batter": "Batter",
+  "fluid.crbeba.batter": "Batter",
+  "fluid_type.crbeba.batter": "Batter",
+  "item.crbeba.butter": "Butter"
 }

@@ -1,5 +1,8 @@
 package net.mcreator.createbetterbaking;
 
+
+import net.minecraft.core.Direction;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.mcreator.createbetterbaking.init.CrbebaModBlocks;
@@ -27,13 +30,14 @@ public class CreateCompatS {
                 }
 
                 // 2. Check if the block is Sand (or Red Sand)
-                if (level.getBlockState(pos).is(CrbebaModBlocks.CAKE_PAN.get())) {
-                    if (simulate) return 100;
+                if (level.getBlockState(pos).is(CrbebaModBlocks.CAKE_PAN.get()) ) {
+                	if (level.getBlockState(pos).getValue(net.minecraft.world.level.block.state.properties.BlockStateProperties.FACING) == Direction.UP) {
+                    if (simulate) return 500;
 
                     // 3. Transform the block
                     level.setBlockAndUpdate(pos,  CrbebaModBlocks.CAKE_PAN_WITH_BATTER.get().defaultBlockState());
-                    return 100;
-                }
+                    return 500;
+                }}
                 return 0;
             };
 
