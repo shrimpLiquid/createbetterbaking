@@ -4,8 +4,8 @@
   "definition": {
     "name": "Batter",
     "bucketName": "Frosting Bucket",
-    "textureStill": "flowing_frosting",
-    "textureFlowing": "flowing_frosting",
+    "textureStill": "stillbatter",
+    "textureFlowing": "stillbatter",
     "textureRenderOverlay": "",
     "hasFog": false,
     "fogStartDistance": {

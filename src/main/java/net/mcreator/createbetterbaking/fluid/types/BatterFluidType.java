@@ -22,8 +22,8 @@ public class BatterFluidType extends FluidType {
 	@SubscribeEvent
 	public static void registerFluidTypeExtensions(RegisterClientExtensionsEvent event) {
 		event.registerFluidType(new IClientFluidTypeExtensions() {
-			private static final ResourceLocation STILL_TEXTURE = ResourceLocation.parse("crbeba:block/flowing_frosting");
-			private static final ResourceLocation FLOWING_TEXTURE = ResourceLocation.parse("crbeba:block/flowing_frosting");
+			private static final ResourceLocation STILL_TEXTURE = ResourceLocation.parse("crbeba:block/stillbatter");
+			private static final ResourceLocation FLOWING_TEXTURE = ResourceLocation.parse("crbeba:block/stillbatter");
 
 			@Override
 			public ResourceLocation getStillTexture() {
