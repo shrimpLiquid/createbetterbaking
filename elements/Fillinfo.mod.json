@@ -1,0 +1,15 @@
+{
+  "_fv": 79,
+  "_type": "information",
+  "definition": {
+    "type": "Item",
+    "items": [
+      {
+        "value": "CUSTOM:CakePanWithBatter"
+      }
+    ],
+    "info": [
+      "Place an empty cake pan underneath a spout with 500mb of batter."
+    ]
+  }
+}

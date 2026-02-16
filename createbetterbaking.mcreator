@@ -292,6 +292,73 @@
           "src/main/resources/data/crbeba/recipe/cakepanmake.json"
         ]
       }
+    },
+    {
+      "name": "Buttermake",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "buttermake",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/crbeba/recipe/buttermake.json"
+        ]
+      }
+    },
+    {
+      "name": "Bakeinfo",
+      "type": "information",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bakeinfo",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "Fillinfo",
+      "type": "information",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fillinfo",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "Frinfoostr",
+      "type": "information",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "frinfoostr",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "BigBaking",
+      "type": "recipe_type",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "big_baking",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/createbetterbaking/recipe/BigBakingRecipe.java",
+          "src/main/java/net/mcreator/createbetterbaking/integration/jei/BigBakingJeiCategory.java"
+        ]
+      }
+    },
+    {
+      "name": "Frostingify",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "frostingify",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/crbeba/recipe/frostingify.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -320,13 +387,22 @@
       "block.crbeba.batter": "Batter",
       "fluid.crbeba.batter": "Batter",
       "fluid_type.crbeba.batter": "Batter",
-      "item.crbeba.butter": "Butter"
+      "item.crbeba.butter": "Butter",
+      "jei.crbeba.bakeinfo": "Surround a cake pan filled with batter with blocks on all sides including diagonals, with the bottom block a lit blaze burner. ",
+      "jei.crbeba.fillinfo": "Place an empty cake pan underneath a spout with 500mb of batter.",
+      "jei.crbeba.frinfoostr": "Place an unfrosted cake underneath a spout with 100mb of frosting.",
+      "jei.crbeba.big_baking": "Big Baking"
     }
   },
   "metadata": {
     "files": [
       "src/main/java/net/mcreator/createbetterbaking/init/CrbebaModFluids.java",
       "src/main/java/net/mcreator/createbetterbaking/init/CrbebaModFluidTypes.java",
+      "src/main/java/net/mcreator/createbetterbaking/init/CrbebaModInformation.java",
+      "src/main/java/net/mcreator/createbetterbaking/init/CrbebaModRecipeTypes.java",
+      "src/main/java/net/mcreator/createbetterbaking/init/CrbebaModJeiPlugin.java",
+      "src/main/java/net/mcreator/createbetterbaking/recipe/RecipeUtils.java",
+      "src/main/java/net/mcreator/createbetterbaking/integration/jei/AbstractJeiCategory.java",
       "src/main/java/net/mcreator/createbetterbaking/init/CrbebaModBlocks.java",
       "src/main/java/net/mcreator/createbetterbaking/init/CrbebaModItems.java",
       "src/main/resources/pack.mcmeta",
@@ -351,7 +427,9 @@
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
-    "mcreatorDependencies": [],
+    "mcreatorDependencies": [
+      "jei"
+    ],
     "currentGenerator": "neoforge-1.21.1",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.createbetterbaking"

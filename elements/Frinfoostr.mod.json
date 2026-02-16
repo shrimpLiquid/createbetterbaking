@@ -1,0 +1,15 @@
+{
+  "_fv": 79,
+  "_type": "information",
+  "definition": {
+    "type": "Item",
+    "items": [
+      {
+        "value": "Items.CAKE"
+      }
+    ],
+    "info": [
+      "Place an unfrosted cake underneath a spout with 100mb of frosting."
+    ]
+  }
+}

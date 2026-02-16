@@ -1,0 +1,62 @@
+{
+  "_fv": 79,
+  "_type": "recipe_type",
+  "definition": {
+    "name": "BigBaking",
+    "texture": "test",
+    "x": 0,
+    "y": 0,
+    "width": 185,
+    "height": 78,
+    "icon": {
+      "value": "Blocks.BAMBOO_MOSAIC"
+    },
+    "enableTables": false,
+    "tables": [],
+    "title": "Big Baking",
+    "slotList": [
+      {
+        "io": "Input",
+        "type": "Item",
+        "name": "block",
+        "x": 0,
+        "y": 0,
+        "singleItem": true,
+        "height": 16,
+        "fullTank": false,
+        "tankCapacity": 1,
+        "optional": false,
+        "resource": "",
+        "custom": "",
+        "resourceWidth": 16,
+        "resourceHeight": 16,
+        "defaultBoolean": true,
+        "defaultDouble": 0.0,
+        "defaultString": ""
+      },
+      {
+        "io": "Output",
+        "type": "Item",
+        "name": "new",
+        "x": 20,
+        "y": 30,
+        "singleItem": false,
+        "height": 16,
+        "fullTank": false,
+        "tankCapacity": 1,
+        "optional": false,
+        "resource": "",
+        "custom": "",
+        "resourceWidth": 16,
+        "resourceHeight": 16,
+        "defaultBoolean": true,
+        "defaultDouble": 0.0,
+        "defaultString": ""
+      }
+    ],
+    "renderXML": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"render_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"jei_render_texture\"><field name=\"resource\">test</field><field name=\"texX\">0</field><field name=\"texY\">0</field><value name=\"guiX\"><block type=\"jei_number_input\"><field name=\"number\">0</field></block></value><value name=\"guiY\"><block type=\"jei_number_input\"><field name=\"number\">0</field></block></value><value name=\"width\"><block type=\"jei_number_input\"><field name=\"number\">185</field></block></value><value name=\"height\"><block type=\"jei_number_input\"><field name=\"number\">78</field></block></value></block></next></block></xml>",
+    "enableRendering": false,
+    "enableClickArea": false,
+    "clickAreaList": []
+  }
+}

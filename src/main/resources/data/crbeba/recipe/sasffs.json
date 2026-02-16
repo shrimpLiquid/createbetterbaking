@@ -7,14 +7,14 @@
     },
     {
       "item": "minecraft:sugar",
-      "count": 3
+      "count": 2
     }
   ],
   "results": [
     {
       "id": "crbeba:frosting",
       "count": 1,
-      "amount": 100
+      "amount": 50
     }
   ]
 }

@@ -34,6 +34,12 @@ authors="shrimpliquid, MCreator"
     side="BOTH"
 
 
+[[dependencies.crbeba]]
+    modId="jei"
+    type="optional"
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
 
 
 # Start of user code block dependencies configuration

@@ -1,0 +1,13 @@
+{
+  "type": "crbeba:big_baking",
+
+
+  "block": {
+      "item": "crbeba:unfrosted_cake"
+  },
+
+  
+  "new": {
+    "item": "minecraft:cake"
+  }
+}

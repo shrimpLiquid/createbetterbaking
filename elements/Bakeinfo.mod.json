@@ -1,0 +1,15 @@
+{
+  "_fv": 79,
+  "_type": "information",
+  "definition": {
+    "type": "Item",
+    "items": [
+      {
+        "value": "CUSTOM:CakePanWithCake"
+      }
+    ],
+    "info": [
+      "Surround a cake pan filled with batter with blocks on all sides including diagonals, with the bottom block a lit blaze burner. "
+    ]
+  }
+}
